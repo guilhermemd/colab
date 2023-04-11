@@ -1,6 +1,6 @@
 import { getApi } from "../Api/getApi";
 
-interface IRandomUser {
+export interface IRandomUser {
   name: {
     title: string;
     first: string;
