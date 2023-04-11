@@ -1,3 +1,9 @@
+import { RandomUser } from "../components/RandomUser/RandomUser";
 export default function Home() {
-  return <div> hello colab</div>;
+  return (
+    <div>
+      {/*@ts-ignore*/}
+      <RandomUser />
+    </div>
+  );
 }
