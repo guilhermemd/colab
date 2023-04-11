@@ -24,7 +24,7 @@ export interface IRandomUser {
 }
 
 interface IResults {
-  results: IRandomUser;
+  results: IRandomUser[];
 }
 
 export async function useRandomUsers() {

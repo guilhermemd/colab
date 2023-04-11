@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { Envelope, User } from "phosphor-react";
 import { IRandomUser } from "@/talons/RandomUsers/useRandomUsers";
 import { useRandomUsers } from "@/talons/RandomUsers/useRandomUsers";
 
@@ -17,12 +19,20 @@ export async function RandomUser() {
           <h2 className="text-2xl font-bold mb-2">
             {user.name.title} {user.name.first} {user.name.last}
           </h2>
-          <p className="text-gray-800 text-base mb-2">{user.email}</p>
+          <div className="flex items-center mb-2">
+            <Envelope size={24} />:{" "}
+            <span className="text-gray-800 text-base">{user.email}</span>
+          </div>
           <div className="flex items-center justify-between">
             {/* <Link href={`/user/${user.login.username}`}>
               <a className="text-gray-400 hover:text-gray-600">Ver detalhes</a>
             </Link> */}
-            <span className="text-gray-400">ID: {user.login.uuid}</span>
+            <div className="flex items-center mb-2">
+              <User size={24} />:{" "}
+              <span className="text-gray-800 text-base">
+                {user.login.username}
+              </span>
+            </div>
           </div>
         </div>
       </div>
