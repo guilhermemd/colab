@@ -9,7 +9,7 @@ export async function RandomUser() {
     <div className="p-4 md:w-1/2 lg:w-1/3 flex items-center justify-center m-auto">
       <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-2xl">
         <img
-          className="lg:h-48 md:h-36 w-full object-cover object-center"
+          className="w-full object-cover object-center"
           src={user.picture.large}
           alt={`Portrait of ${user.name.first} ${user.name.last}`}
         />
