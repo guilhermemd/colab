@@ -31,8 +31,9 @@ export async function useRandomUsers() {
   const url = "https://randomuser.me/api/?inc=name,email,picture,login";
 
   const { results }: IResults = await getApi(url);
+  const [user] = results;
 
   return {
-    results,
+    user,
   };
 }
