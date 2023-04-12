@@ -29,7 +29,7 @@ export async function RandomUser() {
           </div>
           <div className="flex items-center">
             <Link
-              href={`/userDetails/${info.seed}`}
+              href={`/UserDetails/${info.seed}`}
               className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
             >
               User Details
