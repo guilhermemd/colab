@@ -4,7 +4,7 @@ import { Envelope, User } from "phosphor-react";
 import { useRandomUsers } from "@/talons/RandomUsers/useRandomUsers";
 // {`/user/${user.login.username}`}
 export async function RandomUser() {
-  const { user } = await useRandomUsers();
+  const { user, info } = await useRandomUsers();
   return (
     <div className="p-4 md:w-1/2 lg:w-1/3 flex items-center justify-center m-auto">
       <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-2xl">
@@ -29,7 +29,7 @@ export async function RandomUser() {
           </div>
           <div className="flex items-center">
             <Link
-              href={`/userDetails/${user.login.username}`}
+              href={`/userDetails/${info.seed}`}
               className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
             >
               Ver detalhes

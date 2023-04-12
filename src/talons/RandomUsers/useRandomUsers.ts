@@ -22,18 +22,26 @@ export interface IRandomUser {
     sha256: string;
   };
 }
+interface IInfo {
+  seed: string;
+  results: number;
+  page: number;
+  version: string;
+}
 
 interface IResults {
   results: IRandomUser[];
+  info: IInfo;
 }
 
 export async function useRandomUsers() {
-  const url = "https://randomuser.me/api/?inc=name,email,picture,login";
+  const url = "https://randomuser.me/api/?inc=name,email,picture,login,info";
 
-  const { results }: IResults = await getApi(url);
+  const { results, info }: IResults = await getApi(url);
   const [user] = results;
 
   return {
     user,
+    info,
   };
 }
