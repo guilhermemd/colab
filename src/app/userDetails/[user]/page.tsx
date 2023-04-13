@@ -8,9 +8,7 @@ export default async function UserDetails({
 }) {
   const userName = params.user;
 
-  const { userDetails, formattedDate } = await useUserDetails({ userName });
+  const { userDetails } = await useUserDetails({ userName });
 
-  return (
-    <CardUserDetails userDetails={userDetails} formattedDate={formattedDate} />
-  );
+  return <CardUserDetails userDetails={userDetails} />;
 }

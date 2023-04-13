@@ -72,12 +72,7 @@ export async function useUserDetails(props: { userName: string }) {
 
   const [userDetails] = results;
 
-  const formattedDate = (date: string) => {
-    return format(new Date(date), "dd/MM/yyyy");
-  };
-
   return {
     userDetails,
-    formattedDate,
   };
 }

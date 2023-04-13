@@ -1,7 +1,9 @@
+import { useCardUsersDetails } from "@/talons/CardUserDetails/useCardUserDetalis";
 import Link from "next/link";
 
 export default function CardUserDetails(props) {
-  const { userDetails, formattedDate } = props;
+  const { formattedDate } = useCardUsersDetails();
+  const { userDetails } = props;
 
   const {
     name,

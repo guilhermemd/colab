@@ -21,9 +21,5 @@ export function useUserGender() {
 
   const userGender = useMemo(() => data.results, [data]);
 
-  const formattedDate = (date: string) => {
-    return format(new Date(date), "dd/MM/yyyy");
-  };
-
-  return { userGender, formattedDate, setGender };
+  return { userGender, setGender };
 }

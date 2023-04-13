@@ -3,7 +3,7 @@ import CardUserDetails from "@/components/CardUserDetails/CardUserDetails";
 
 import { useUserGender } from "@/talons/UserGender/useUserGender";
 export default function UserGender() {
-  const { userGender, formattedDate, setGender } = useUserGender();
+  const { userGender, setGender } = useUserGender();
 
   if (!userGender) {
     return <div>Loading...</div>;
@@ -32,10 +32,7 @@ export default function UserGender() {
         </div>
       </div>
 
-      <CardUserDetails
-        userDetails={userDetails}
-        formattedDate={formattedDate}
-      />
+      <CardUserDetails userDetails={userDetails} />
     </>
   );
 }
