@@ -14,7 +14,7 @@ export default function UserGender() {
   return (
     <>
       <div className="flex flex-col items-center gap-10 py-4">
-        <h1 className="text-4xl text-gray-600 font-bold ">
+        <h1 className="text-4xl text-gray-600 font-bold al text-center">
           Pick a Gender to generate an User
         </h1>
         <div className="flex justify-between items-center gap-4">

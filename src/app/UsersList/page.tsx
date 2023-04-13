@@ -21,8 +21,11 @@ export default function UsersList() {
   return (
     <>
       <div className="p-5 max-w-lg m-auto">
-        <div className="my-4">
-          <label htmlFor="users" className="mr-2">
+        <div className="my-4 flex justify-center">
+          <label
+            htmlFor="users"
+            className="mr-2 text-lg text-gray-600 font-bold al text-center"
+          >
             Select how many users:
           </label>
           <select
@@ -38,6 +41,12 @@ export default function UsersList() {
             ))}
           </select>
         </div>
+        <label
+          htmlFor="countries"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >
+          Select an option
+        </label>
 
         <table className="min-w-full divide-y divide-gray-200 shadow-2xl">
           <thead className="bg-gray-50 ">
@@ -86,6 +95,14 @@ export default function UsersList() {
             ))}
           </tbody>
         </table>
+        <div className="p-5 flex justify-center">
+          <Link
+            href="/"
+            className=" bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
+          >
+            Back to Home
+          </Link>
+        </div>
       </div>
     </>
   );
