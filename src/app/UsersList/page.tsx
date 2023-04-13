@@ -2,12 +2,13 @@
 import Link from "next/link";
 
 import { useUsersList } from "@/talons/UsersList/useUsersList";
+import Loader from "@/components/Loader/Loader";
 export default function UsersList() {
   const { usersList, showUsers, handleUserChange, usersShowing } =
     useUsersList();
 
   if (!usersList) {
-    return <div> Loading...</div>;
+    return <Loader />;
   }
 
   const saveToLocalStorage = (key, value) => {

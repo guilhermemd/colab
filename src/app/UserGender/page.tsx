@@ -1,12 +1,13 @@
 "use client";
 import CardUserDetails from "@/components/CardUserDetails/CardUserDetails";
+import Loader from "@/components/Loader/Loader";
 
 import { useUserGender } from "@/talons/UserGender/useUserGender";
 export default function UserGender() {
   const { userGender, setGender } = useUserGender();
 
   if (!userGender) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
   const [userDetails] = userGender;
 
