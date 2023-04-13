@@ -1,3 +1,4 @@
+import Header from "@/components/Header/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <section className="max-w-5xl m-auto">{children}</section>
+        <Header />
+        <section className="max-w-5xl m-auto pt-11">{children}</section>
       </body>
     </html>
   );
