@@ -8,7 +8,6 @@ export default function CardUserDetails(props) {
   const { userDetails } = props;
   const pathname = usePathname();
 
-  console.log("aqui", pathname);
   const {
     name,
     picture,
@@ -77,12 +76,22 @@ export default function CardUserDetails(props) {
           {formattedDate(registered.date)}
         </p>
       </div>
-      <Link
-        href="/"
-        className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
-      >
-        Back to Home
-      </Link>{" "}
+      <div className="flex gap-4">
+        <Link
+          href="/"
+          className=" bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
+        >
+          Back to Home
+        </Link>{" "}
+        {pathname === "/ListUserDetails" ? (
+          <Link
+            href="/UsersList"
+            className=" bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-6 py-2"
+          >
+            Back to List
+          </Link>
+        ) : null}
+      </div>
     </div>
   );
 }

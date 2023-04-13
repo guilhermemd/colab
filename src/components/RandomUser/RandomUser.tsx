@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { Envelope, User } from "phosphor-react";
 import { useRandomUsers } from "@/talons/RandomUsers/useRandomUsers";
-// {`/user/${user.login.username}`}
 export async function RandomUser() {
   const { user, info } = await useRandomUsers();
   return (

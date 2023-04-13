@@ -11,14 +11,12 @@ export default function UsersList() {
     return <Loader />;
   }
 
-  const saveToLocalStorage = (key, value) => {
+  const saveToLocalStorage = (key: string, value) => {
     if (typeof window !== "undefined") {
       const serializedValue = JSON.stringify(value);
       localStorage.setItem(key, serializedValue);
     }
   };
-
-  const myObject = { name: "cu", age: 30 };
 
   return (
     <>
