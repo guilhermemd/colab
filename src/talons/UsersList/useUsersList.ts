@@ -1,5 +1,8 @@
-import { getApi } from "../Api/getApi";
+"use client";
+import axios from "axios";
+import { format } from "date-fns";
 
+import { useState, useEffect, useMemo } from "react";
 export interface IUsersList {
   name: {
     first: string;
@@ -13,12 +16,24 @@ interface IUsersListResult {
   results: IUsersList[];
 }
 
-export async function useUsersList() {
-  const url = "https://randomuser.me/api/?results=10";
+export function useUsersList() {
+  const [data, setData] = useState([]);
+  const [showUser, setShowUser] = useState(10);
 
-  const { results }: IUsersListResult = await getApi(url);
+  useEffect(() => {
+    axios
+      .get(`https://randomuser.me/api/?results=${showUser}`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  const usersList = useMemo(() => data.results, [data]);
 
   return {
-    results,
+    usersList,
+    setShowUser,
   };
 }
