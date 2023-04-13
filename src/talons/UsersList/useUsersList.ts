@@ -18,22 +18,30 @@ interface IUsersListResult {
 
 export function useUsersList() {
   const [data, setData] = useState([]);
-  const [showUser, setShowUser] = useState(10);
+  const [showUsers, setShowUsers] = useState("10");
 
   useEffect(() => {
     axios
-      .get(`https://randomuser.me/api/?results=${showUser}`)
+      .get(`https://randomuser.me/api/?results=${showUsers}`)
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [showUsers]);
   const usersList = useMemo(() => data.results, [data]);
+
+  function handleUserChange(event) {
+    setShowUsers(event.target.value);
+  }
+
+  const usersShowing = ["1", "5", "10", "50"];
 
   return {
     usersList,
-    setShowUser,
+    showUsers,
+    handleUserChange,
+    usersShowing,
   };
 }
