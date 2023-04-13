@@ -10,6 +10,15 @@ export default function UsersList() {
     return <div> Loading...</div>;
   }
 
+  const saveToLocalStorage = (key, value) => {
+    if (typeof window !== "undefined") {
+      const serializedValue = JSON.stringify(value);
+      localStorage.setItem(key, serializedValue);
+    }
+  };
+
+  const myObject = { name: "cu", age: 30 };
+
   return (
     <>
       <div className="p-5 max-w-lg m-auto">
@@ -30,6 +39,7 @@ export default function UsersList() {
             ))}
           </select>
         </div>
+
         <table className="min-w-full divide-y divide-gray-200 shadow-2xl">
           <thead className="bg-gray-50 ">
             <tr>
@@ -60,12 +70,18 @@ export default function UsersList() {
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <Link
-                    href="#"
-                    className="text-indigo-600 hover:text-indigo-900"
+                  <button
+                    onClick={() =>
+                      saveToLocalStorage("userDetails", usersList[index])
+                    }
                   >
-                    View
-                  </Link>
+                    <Link
+                      href="#"
+                      className="text-indigo-600 hover:text-indigo-900"
+                    >
+                      View
+                    </Link>
+                  </button>
                 </td>
               </tr>
             ))}
