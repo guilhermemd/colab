@@ -5,18 +5,18 @@ export default function Home() {
     <div>
       {/*@ts-ignore*/}
       <RandomUser />
-      <div className="flex justify-center items-center">
+      <div className="m-auto grid grid-cols-2 items-center max-w-xs">
         <Link
           href="/UsersList"
-          className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
+          className="w-28 bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
         >
           Users List
         </Link>
         <Link
           href="/UserGender"
-          className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2"
+          className="w-28 bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black pl-4 py-2"
         >
-          Users by Gender
+          By Gender
         </Link>
       </div>
     </div>
