@@ -1,10 +1,14 @@
-import { useCardUsersDetails } from "@/talons/CardUserDetails/useCardUserDetalis";
+"use client";
+import { useCardUsersDetails } from "@/talons/CardUserDetails/useCardUserDetails";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function CardUserDetails(props) {
   const { formattedDate } = useCardUsersDetails();
   const { userDetails } = props;
+  const pathname = usePathname();
 
+  console.log("aqui", pathname);
   const {
     name,
     picture,
