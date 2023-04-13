@@ -1,6 +1,5 @@
 import CardUserDetails from "@/components/CardUserDetails/CardUserDetails";
 import { useUserDetails } from "@/talons/UserDetails/useUserDetails";
-import Link from "next/link";
 export default async function UserDetails({
   params,
 }: {

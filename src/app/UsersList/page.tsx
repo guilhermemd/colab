@@ -76,7 +76,7 @@ export default function UsersList() {
                     }
                   >
                     <Link
-                      href="#"
+                      href="/ListUserDetails"
                       className="text-indigo-600 hover:text-indigo-900"
                     >
                       View
