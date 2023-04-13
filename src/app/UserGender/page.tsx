@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { useUserGender } from "@/talons/UserGender/useUserGender";
 export default function UserGender() {
-  const { userGender, formattedDate } = useUserGender();
+  const { userGender, formattedDate, setGender } = useUserGender();
 
   if (!userGender) {
     return <div>Loading...</div>;
@@ -31,10 +31,16 @@ export default function UserGender() {
           Pick a Gender to generate an User
         </h1>
         <div className="flex justify-between items-center gap-4">
-          <button className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2 w-24">
+          <button
+            onClick={() => setGender("female")}
+            className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2 w-24"
+          >
             Female
           </button>
-          <button className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2 w-24">
+          <button
+            onClick={() => setGender("male")}
+            className="bg-sky-500 rounded-lg hover:bg-sky-400 m-auto cursor-pointer border-2 border-black px-4 py-2 w-24"
+          >
             Male
           </button>
         </div>

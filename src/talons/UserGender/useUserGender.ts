@@ -6,17 +6,18 @@ import { useState, useEffect, useMemo } from "react";
 
 export function useUserGender() {
   const [data, setData] = useState([]);
+  const [gender, setGender] = useState("female");
 
   useEffect(() => {
     axios
-      .get("https://randomuser.me/api/?gender=female")
+      .get(`https://randomuser.me/api/?gender=${gender}`)
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [gender]);
 
   const userGender = useMemo(() => data.results, [data]);
 
@@ -24,5 +25,5 @@ export function useUserGender() {
     return format(new Date(date), "dd/MM/yyyy");
   };
 
-  return { userGender, formattedDate };
+  return { userGender, formattedDate, setGender };
 }
