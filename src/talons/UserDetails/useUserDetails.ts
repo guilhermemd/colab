@@ -1,7 +1,4 @@
 import { getApi } from "../Api/getApi";
-
-import { format } from "date-fns";
-
 interface IUserDetails {
   gender: string;
   name: {

@@ -3,7 +3,7 @@
 import CardUserDetails from "@/components/CardUserDetails/CardUserDetails";
 
 export default function ListUserDetails() {
-  const getFromLocalStorage = (key) => {
+  const getFromLocalStorage = (key: string) => {
     if (typeof window !== "undefined") {
       const serializedValue = localStorage.getItem(key);
       if (serializedValue !== null) {

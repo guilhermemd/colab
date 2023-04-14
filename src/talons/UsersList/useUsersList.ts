@@ -86,7 +86,7 @@ export function useUsersList() {
       });
   }, [showUsers]);
 
-  function handleUserChange(event) {
+  function handleUserChange(event: ChangeEvent<HTMLSelectElement>) {
     setShowUsers(event.target.value);
   }
 

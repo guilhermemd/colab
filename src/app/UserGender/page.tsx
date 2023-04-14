@@ -10,8 +10,7 @@ export default function UserGender() {
     return <Loader />;
   }
   const userDetails = userGender[0];
-  // console.log(userDetails);
-  // console.log("name", userDetails.name);
+
   return (
     <>
       <div className="flex flex-col items-center gap-10 py-4">

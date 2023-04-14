@@ -3,7 +3,7 @@ import { useCardUsersDetails } from "@/talons/CardUserDetails/useCardUserDetails
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface User {
+interface IUserDetails {
   gender: string;
   name: {
     title: string;
@@ -60,7 +60,7 @@ interface User {
   nat: string;
 }
 
-export default function CardUserDetails(props: { userDetails: User }) {
+export default function CardUserDetails(props: { userDetails: IUserDetails }) {
   const { formattedDate } = useCardUsersDetails();
   const { userDetails } = props;
   const pathname = usePathname();
