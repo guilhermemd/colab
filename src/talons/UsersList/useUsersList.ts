@@ -1,20 +1,7 @@
 "use client";
 import axios from "axios";
-import { format } from "date-fns";
 
 import { useState, useEffect, useMemo } from "react";
-export interface IUsersList {
-  name: {
-    first: string;
-  };
-  picture: {
-    medium: string;
-  };
-}
-
-interface IUsersListResult {
-  results: IUsersList[];
-}
 
 export function useUsersList() {
   const [data, setData] = useState([]);
