@@ -35,7 +35,13 @@ interface IResults {
 }
 
 export async function useRandomUsers() {
-  const url = "http://localhost:3000/api/randomUser";
+  if (!process.env.NEXT_PUBLIC_DB_HOST) {
+    throw new Error(
+      "You have to declare a variable NEXT_PUBLIC_DB_HOST in an .env"
+    );
+  }
+
+  const url = `${process.env.NEXT_PUBLIC_DB_HOST}/api/randomUser`;
 
   const { results, info }: IResults = await getApi(url);
   const [user] = results;
