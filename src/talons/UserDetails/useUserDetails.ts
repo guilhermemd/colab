@@ -56,7 +56,7 @@ interface IUserDetails {
   nat: string;
 }
 
-interface IResultsDetails {
+export interface IResultsDetails {
   results: IUserDetails[];
 }
 

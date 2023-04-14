@@ -8,6 +8,6 @@ export default async function UserDetails({
   const userName = params.user;
 
   const { userDetails } = await useUserDetails({ userName });
-
+  /*@ts-ignore*/
   return <CardUserDetails userDetails={userDetails} />;
 }
