@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import { GithubLogo } from "phosphor-react";
 
 export default function Header() {
@@ -20,7 +21,9 @@ export default function Header() {
           </a>
         </div>
         <div className="flex justify-center">
-          <p className="text-lg font-bold align-bottom">Colab Challenge</p>
+          <Link href="/">
+            <p className="text-lg font-bold align-bottom">Colab Challenge</p>
+          </Link>
         </div>
         <div>
           <a
