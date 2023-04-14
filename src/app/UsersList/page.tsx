@@ -13,7 +13,7 @@ export default function UsersList() {
     saveToLocalStorage,
   } = useUsersList();
 
-  if (!usersList) {
+  if (usersList.length === 0) {
     return <Loader />;
   }
 

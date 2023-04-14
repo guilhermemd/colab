@@ -6,11 +6,10 @@ import { useUserGender } from "@/talons/UserGender/useUserGender";
 export default function UserGender() {
   const { userGender, setGender } = useUserGender();
 
-  const userDetails = userGender[0];
-
-  if (!userDetails) {
+  if (userGender.length === 0) {
     return <Loader />;
   }
+  const userDetails = userGender[0];
 
   return (
     <>
@@ -34,7 +33,7 @@ export default function UserGender() {
         </div>
       </div>
 
-      {userDetails ? <CardUserDetails userDetails={userDetails} /> : null}
+      <CardUserDetails userDetails={userDetails} />
     </>
   );
 }
