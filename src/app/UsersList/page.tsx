@@ -98,13 +98,6 @@ export default function UsersList() {
             ))}
           </select>
         </div>
-        <label
-          htmlFor="countries"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Select an option
-        </label>
-
         <table className="min-w-full divide-y divide-gray-200 shadow-2xl">
           <thead className="bg-gray-50 ">
             <tr>
@@ -120,7 +113,7 @@ export default function UsersList() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {usersList.map((user, index) => (
+            {usersList?.map((user, index) => (
               <tr key={index}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <img
