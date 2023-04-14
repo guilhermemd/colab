@@ -6,11 +6,15 @@ To run the application on your machine, follow the steps below:
 
 1 - Clone this repository on your machine: `git clone https://github.com/guilhermemd/colab`
 
-2 - Install Node dependencies: `npm i`
+2 - Create an .env in root director and add `NEXT_PUBLIC_DB_HOST=http://localhost:3000`
 
-3 - To start the application: `npm run dev`
+3 - Install Node dependencies: `npm i`
 
-4 - Access: http://localhost:3000/
+4 - To start the application: `npm run dev`
+
+5 - Access: http://localhost:3000/
+
+
 
  ## Meu processo para desenvolver o APP
  
