@@ -4,7 +4,7 @@
 
 To run the application on your machine, follow the steps below:
 
-1 - Clone this repository on your machine: `https://github.com/guilhermemd/colab`
+1 - Clone this repository on your machine: `git clone https://github.com/guilhermemd/colab`
 
 2 - Install Node dependencies: `npm i`
 
