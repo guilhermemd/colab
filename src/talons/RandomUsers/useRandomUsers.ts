@@ -35,11 +35,10 @@ interface IResults {
 }
 
 export async function useRandomUsers() {
-  const url = "https://randomuser.me/api/?inc=name,email,picture,login,info";
+  const url = "http://localhost:3000/api/randomUser";
 
   const { results, info }: IResults = await getApi(url);
   const [user] = results;
-
   return {
     user,
     info,
