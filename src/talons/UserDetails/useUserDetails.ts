@@ -63,7 +63,13 @@ export interface IResultsDetails {
 export async function useUserDetails(props: { userName: string }) {
   const { userName } = props;
 
-  const url = `https://randomuser.me/api/?seed=${userName}`;
+  if (!process.env.NEXT_PUBLIC_DB_HOST) {
+    throw new Error(
+      "You have to declare a variable NEXT_PUBLIC_DB_HOST in an .env"
+    );
+  }
+
+  const url = `${process.env.NEXT_PUBLIC_DB_HOST}/api/userDetails/${userName}`;
 
   const { results }: IResultsDetails = await getApi(url);
 

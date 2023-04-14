@@ -73,9 +73,17 @@ export function useUserGender() {
   const [userGender, setUserGender] = useState<User[]>([]);
   const [gender, setGender] = useState("female");
 
+  if (!process.env.NEXT_PUBLIC_DB_HOST) {
+    throw new Error(
+      "You have to declare a variable NEXT_PUBLIC_DB_HOST in an .env"
+    );
+  }
+
   useEffect(() => {
     axios
-      .get<ApiResponse>(`https://randomuser.me/api/?gender=${gender}`)
+      .get<ApiResponse>(
+        `${process.env.NEXT_PUBLIC_DB_HOST}/api/userGender/${gender}`
+      )
       .then((response) => {
         setUserGender(response.data.results);
       })

@@ -74,10 +74,16 @@ interface User {
 export function useUsersList() {
   const [usersList, setUsersList] = useState<User[]>([]);
   const [showUsers, setShowUsers] = useState("10");
+  if (!process.env.NEXT_PUBLIC_DB_HOST) {
+    throw new Error(
+      "You have to declare a variable NEXT_PUBLIC_DB_HOST in an .env"
+    );
+  }
 
+  const url = `${process.env.NEXT_PUBLIC_DB_HOST}/api/userList/${showUsers}`;
   useEffect(() => {
     axios
-      .get<ApiResponse>(`https://randomuser.me/api/?results=${showUsers}`)
+      .get<ApiResponse>(url)
       .then((response) => {
         setUsersList(response.data.results);
       })
