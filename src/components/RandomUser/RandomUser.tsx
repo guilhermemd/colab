@@ -5,7 +5,7 @@ import { useRandomUsers } from "@/talons/RandomUsers/useRandomUsers";
 export async function RandomUser() {
   const { user, info } = await useRandomUsers();
   return (
-    <div className="p-4 md:w-1/2 lg:w-1/3 flex items-center justify-center m-auto">
+    <div className="p-4 flex items-center justify-center m-auto">
       <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-2xl">
         <img
           className="w-full object-cover object-center"
