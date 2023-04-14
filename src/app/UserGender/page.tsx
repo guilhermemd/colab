@@ -6,10 +6,11 @@ import { useUserGender } from "@/talons/UserGender/useUserGender";
 export default function UserGender() {
   const { userGender, setGender } = useUserGender();
 
-  if (!userGender) {
+  const userDetails = userGender[0];
+
+  if (!userDetails) {
     return <Loader />;
   }
-  const userDetails = userGender[0];
 
   return (
     <>

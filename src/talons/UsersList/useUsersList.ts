@@ -90,12 +90,20 @@ export function useUsersList() {
     setShowUsers(event.target.value);
   }
 
-  const usersShowing = ["1", "5", "10", "50"];
+  const usersShowing = ["10", "15", "25", "40", "50"];
+
+  const saveToLocalStorage = (key: string, value: User) => {
+    if (typeof window !== "undefined") {
+      const serializedValue = JSON.stringify(value);
+      localStorage.setItem(key, serializedValue);
+    }
+  };
 
   return {
     usersList,
     showUsers,
     handleUserChange,
     usersShowing,
+    saveToLocalStorage,
   };
 }
