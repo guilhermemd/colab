@@ -20,7 +20,7 @@ export default function UsersList() {
 
   return (
     <>
-      <div className="p-5 max-w-lg m-auto">
+      <div className="p-5">
         <div className="my-4 flex justify-center">
           <label
             htmlFor="users"
