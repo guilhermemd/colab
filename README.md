@@ -8,7 +8,7 @@ To run the application on your machine, follow the steps below:
 
 2 - Create an .env in root director and add `NEXT_PUBLIC_DB_HOST=http://localhost:3000`
 
-3 - Install Node dependencies: `npm i`
+3 - Node version 18: Install Node dependencies: `npm i`
 
 4 - To start the application: `npm run dev`
 
