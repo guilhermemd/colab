@@ -16,6 +16,18 @@ To run the application on your machine, follow the steps below:
 
 
 
+
+
+:bangbang: Problemas ao rodar no Windows :bangbang:
+
+:bangbang: Pedi para alguns colegas seguirem o README e rodarem a aplicação em seus ambientes locais. Todos os usuários de Linux e Mac não tiveram problemas. :bangbang:
+
+:bangbang: Já os usuários de Windows encontraram problemas com o JSON.parse, e por isso a aplicação não está rodando. Estou tentando entender qual é o motivo. Minha maior dificuldade é reproduzir o problema localmente, já que uso um Mac. :bangbang:
+
+
+
+
+
  ## Meu processo para desenvolver o APP
  
  Busquei utilizar o que há de mais novo para Front-End. Por esta razão utilizei o [Nextjs 13 Beta](https://beta.nextjs.org/docs), [Tailwind](https://v2.tailwindcss.com/) e [Typescript](https://www.typescriptlang.org/). Também procurei utilizar alguns conceitos de SOLID, como Talons (Custom Hooks).
